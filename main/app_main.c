@@ -86,7 +86,7 @@ static void led_shining(void)
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
 
-    ESP_LOGI(TAG, "LED SHINING ERROR!");
+    ESP_LOGE(TAG, "LED SHINING ERROR!");
     vTaskDelete(NULL);  //删除当前任务
 }
 

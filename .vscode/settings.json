@@ -1,0 +1,9 @@
+{
+    "idf.espIdfPath": "/home/jc/esp/ESP8266_RTOS_SDK",
+    "idf.pythonBinPath": "/home/jc/.espressif/python_env/rtos3.4_py3.10_env/bin/python",
+    "idf.customExtraPaths": "/home/jc/.espressif/tools/xtensa-lx106-elf/esp-2020r3-49-gd5524c1-8.4.0/xtensa-lx106-elf/bin",
+    "idf.port": "/dev/ttyUSB0",
+    "idf.adapterTargetName": "esp8266",
+    "idf.flashType": "UART",
+    "idf.customTask": "clear\n powershell.exe usbipd wsl list\n powershell.exe usbipd wsl attach --busid 4-1\n sudo chmod a+r+w ${config:idf.port}\n echo \n echo Load USB to TTL.\n",
+}

@@ -6,9 +6,7 @@ PROJECT_NAME := smart_switch
 
 EXTRA_COMPONENT_DIRS := $(realpath ../../esp-ali-smartliving)
 
-ifneq (,$(wildcard $(IDF_PATH)/components/esp8266/*))
-export IDF_TARGET = esp8266
-endif
+# export IDF_TARGET = esp8266
 
 SDKCONFIG_DEFAULTS := ./sdkconfig_defaults/sdkconfig.defaults.$(IDF_TARGET)
 

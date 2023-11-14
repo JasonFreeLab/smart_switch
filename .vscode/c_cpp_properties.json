@@ -8,16 +8,12 @@
                 "${workspaceFolder}/components/***",
                 "${config:idf.espIdfPath}/components/**",
                 "${config:idf.espIdfPath}/components/***",
-                "build/bootloader/config/**",
+                "build/bootloader/config/*",
                 "../../esp-ali-smartliving/conn_mgr/**",
                 "../../esp-ali-smartliving/ali-smartliving-device-sdk-c/output/release/include/**",
                 "../../esp-ali-smartliving/ali-smartliving-device-sdk-c/output/release/include/imports/**",
                 "../../esp-ali-smartliving/ali-smartliving-device-sdk-c/output/release/include/exports/**"
-            ],
-            "defines": [],
-            "compilerPath": "${config:idf.toolsPath}/tools/xtensa-lx106-elf/esp-2020r3-49-gd5524c1-8.4.0/xtensa-lx106-elf/bin/xtensa-lx106-elf-gcc",
-            "cStandard": "c17",
-            "cppStandard": "c++14"
+            ]
         }
     ],
     "version": 4

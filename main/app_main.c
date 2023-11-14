@@ -1,24 +1,5 @@
 /*
- * ESPRSSIF MIT License
- *
- * Copyright (c) 2019 <ESPRESSIF SYSTEMS (SHANGHAI) PTE LTD>
- *
- * Permission is hereby granted for use on ESPRESSIF SYSTEMS ESP32 only, in which case,
- * it is free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished
- * to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or
- * substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * JasonFreeLab
  *
  */
 #include <string.h>
@@ -51,26 +32,20 @@ bool configured = false;
 TaskHandle_t led_shining_taskhandle = NULL;
 
 //连上WiFi获取IP后创建应用任务
-static esp_err_t wifi_event_handle(void *ctx, system_event_t *event)
+static void wifi_event_handle(void* arg, esp_event_base_t event_base,
+                                int32_t event_id, void* event_data)
 {
-    switch (event->event_id) {
-        case SYSTEM_EVENT_STA_GOT_IP:
-            if (linkkit_started == false) {
-                wifi_config_t wifi_config = {0};
-                if (conn_mgr_get_wifi_config(&wifi_config) == ESP_OK &&
-                    strcmp((char *)(wifi_config.sta.ssid), HOTSPOT_AP) &&
-                    strcmp((char *)(wifi_config.sta.ssid), ROUTER_AP)) {
-                    xTaskCreate((void (*)(void *))linkkit_main, "switch", 10240, NULL, 5, NULL);
-                    linkkit_started = true;
-                }
+    if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        if (linkkit_started == false) {
+            wifi_config_t wifi_config = {0};
+            if (conn_mgr_get_wifi_config(&wifi_config) == ESP_OK &&
+                strcmp((char *)(wifi_config.sta.ssid), HOTSPOT_AP) &&
+                strcmp((char *)(wifi_config.sta.ssid), ROUTER_AP)) {
+                xTaskCreate((void (*)(void *))linkkit_main, "switch", 10240, NULL, 5, NULL);
+                linkkit_started = true;
             }
-            break;
-
-        default:
-            break;
+        }
     }
-
-    return ESP_OK;
 }
 
 //LED闪烁任务
@@ -80,9 +55,9 @@ static void led_shining(void)
 
     while(true)
     {
-        led_set_on_off(true);
+        led_set_level(true);
         vTaskDelay(100 / portTICK_PERIOD_MS);
-        led_set_on_off(false);
+        led_set_level(false);
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
 
@@ -103,7 +78,7 @@ static void linkkit_event_monitor(int event)
             ESP_LOGI(TAG, "IOTX_AWSS_ENABLE");
             // operate led to indicate user
             if(led_shining_taskhandle == NULL) {
-                xTaskCreate((void (*)(void *))led_shining, "led_shining", 1024, NULL, 6, &led_shining_taskhandle);  //创建led_shining任务
+                xTaskCreate((void (*)(void *))led_shining, "led_shining", 2048, NULL, 6, &led_shining_taskhandle);  //创建led_shining任务
             }
             break;
 
@@ -194,7 +169,7 @@ static void linkkit_event_monitor(int event)
             // operate led to indicate user
             if(led_shining_taskhandle != NULL) {
                 vTaskDelete(led_shining_taskhandle);  //删除led_shining任务
-                led_set_on_off(false);
+                led_set_level(false);
                 ESP_LOGI(TAG, "LED SHINING STOP!");
             }
             break;
@@ -229,9 +204,9 @@ void app_main(void)
     led_init();  //led初始化
 
     conn_mgr_init();  //conn_mgr初始化
-    conn_mgr_register_wifi_event(wifi_event_handle);  //注册WiFi事件回调函数
+    conn_mgr_register_wifi_event(&wifi_event_handle);  //注册WiFi事件回调函数
 
-    IOT_SetLogLevel(IOT_LOG_NONE);  //ali-smartliving-device-sdk log打印等级
+    IOT_SetLogLevel(IOT_LOG_INFO);  //ali-smartliving-device-sdk log打印等级
 
     xTaskCreate((void (*)(void *))start_conn_mgr, "conn_mgr", 3072, NULL, 5, NULL);  //创建start_conn_mgr任务
 }

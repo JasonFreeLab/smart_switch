@@ -1,5 +1,6 @@
 /*
- * JC
+ * JasonFreeLab
+ *
  */
 #include "iot_export_linkkit.h"
 #include "cJSON.h"

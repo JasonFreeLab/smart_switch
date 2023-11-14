@@ -1,24 +1,5 @@
 /*
- * ESPRESSIF MIT License
- *
- * Copyright (c) 2019 <ESPRESSIF SYSTEMS (SHANGHAI) PTE LTD>
- *
- * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
- * it is free of charge, to any person obtaining a copy of this software and associated
- * documentation files (the "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
- * and/or sell copies of the Software, and to permit persons to whom the Software is furnished
- * to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or
- * substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
- * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
- * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
- * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * JasonFreeLab
  *
  */
 #include <string.h>
@@ -41,7 +22,8 @@
 static const char *TAG = "factory_rst";
 
 //切换智能配网模式
-static void factory_set_sc_mode(void) {
+static void factory_set_sc_mode(void)
+{
     uint8_t mode_kv = 0;
     conn_sc_mode_t mode_set = CONN_SC_ZERO_MODE;
     int len_kv = sizeof(uint8_t);
@@ -116,7 +98,7 @@ esp_err_t factory_restore_init(void)
         return ESP_OK;
     }
 #endif
-
+    /* 名称 周期 是否自动重载 ID 回调函数 */
     TimerHandle_t timer = xTimerCreate("factory_clear", FACTORY_QUICK_REBOOT_TIMEOUT / portTICK_RATE_MS,
                                        false, NULL, factory_restore_timer_handler);
 

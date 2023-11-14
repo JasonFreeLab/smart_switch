@@ -1,5 +1,6 @@
 /*
- * jc
+ * JasonFreeLab
+ *
  */
 #include <sdkconfig.h>
 
@@ -7,7 +8,7 @@
 
 #include "esp_log.h"
 
-#define GPIO_OUTPUT_IO       GPIO_NUM_4
+#define GPIO_OUTPUT_IO       GPIO_NUM_16
 #define GPIO_OUTPUT_PIN_SEL  (1ULL<<GPIO_OUTPUT_IO)
 
 static const char *TAG = "led";
@@ -44,7 +45,7 @@ void led_deinit(void)
 /**
  * @brief turn on/off the highlevel led
  */
-int led_set_on_off(bool value)
+void led_set_on_off(bool value)
 {
     ESP_LOGI(TAG, "led_set_on : %s", value == true ? "true" : "false");
 
@@ -53,6 +54,12 @@ int led_set_on_off(bool value)
     } else {
         gpio_set_level(GPIO_OUTPUT_IO, false);
     }
+}
 
-    return 0;
+/**
+ * @brief set led low/high level
+ */
+void led_set_level(bool value)
+{
+    gpio_set_level(GPIO_OUTPUT_IO, value);
 }

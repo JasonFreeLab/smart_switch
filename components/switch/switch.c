@@ -1,5 +1,6 @@
 /*
- * jc
+ * JasonFreeLab
+ *
  */
 #include <sdkconfig.h>
 
@@ -44,7 +45,7 @@ void switch_deinit(void)
 /**
  * @brief turn on/off the highlevel switch
  */
-int switch_set_on_off(bool value)
+void switch_set_on_off(bool value)
 {
     ESP_LOGI(TAG, "switch_set_on : %s", value == true ? "true" : "false");
 
@@ -53,6 +54,4 @@ int switch_set_on_off(bool value)
     } else {
         gpio_set_level(GPIO_OUTPUT_IO, false);
     }
-
-    return 0;
 }

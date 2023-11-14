@@ -1,5 +1,6 @@
 /*
- * jc
+ * JasonFreeLab
+ *
  */
 #ifndef _SWITCH_H_
 #define _SWITCH_H_
@@ -29,8 +30,7 @@ void switch_deinit(void);
  *
  * @param value The "On" value
  *
- * @return none
  */
-int switch_set_on_off(bool value);
+void switch_set_on_off(bool value);
 
 #endif /* _SWITCH_H_ */

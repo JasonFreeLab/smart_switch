@@ -1,5 +1,6 @@
 /*
- * jc
+ * JasonFreeLab
+ *
  */
 #ifndef _LED_H_
 #define _LED_H_
@@ -29,8 +30,15 @@ void led_deinit(void);
  *
  * @param value The "On" value
  *
- * @return none
  */
-int led_set_on_off(bool value);
+void led_set_on_off(bool value);
+
+/**
+ * @brief set led low/high level
+ *
+ * @param value The "On" value
+ *
+ */
+void led_set_level(bool value);
 
 #endif /* _led_H_ */

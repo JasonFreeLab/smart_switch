@@ -73,7 +73,7 @@ static esp_err_t factory_restore_handle(void)
 }
 
 //重启定时器超时清除
-static void factory_restore_timer_handler(void *timer)
+static void factory_restore_timer_handler(TimerHandle_t timer)
 {
     if (!xTimerStop(timer, 0)) {
         ESP_LOGE(TAG, "xTimerStop timer %p", timer);

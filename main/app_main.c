@@ -78,7 +78,7 @@ static void linkkit_event_monitor(int event)
             ESP_LOGI(TAG, "IOTX_AWSS_ENABLE");
             // operate led to indicate user
             if(led_shining_taskhandle == NULL) {
-                xTaskCreate((void (*)(void *))led_shining, "led_shining", 2048, NULL, 6, &led_shining_taskhandle);  //创建led_shining任务
+                xTaskCreate((void (*)(void *))led_shining, "led_shining", 3072, NULL, 6, &led_shining_taskhandle);  //创建led_shining任务
             }
             break;
 

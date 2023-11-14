@@ -99,7 +99,7 @@ esp_err_t factory_restore_init(void)
     }
 #endif
     /* 名称 周期 是否自动重载 ID 回调函数 */
-    TimerHandle_t timer = xTimerCreate("factory_clear", FACTORY_QUICK_REBOOT_TIMEOUT / portTICK_RATE_MS,
+    TimerHandle_t timer = xTimerCreate("factory_clear", FACTORY_QUICK_REBOOT_TIMEOUT / portTICK_PERIOD_MS,
                                        false, NULL, factory_restore_timer_handler);
 
     xTimerStart(timer, portMAX_DELAY);

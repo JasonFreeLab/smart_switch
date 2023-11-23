@@ -11,6 +11,8 @@ set(EXTRA_COMPONENT_DIRS "../../esp-ali-smartliving")
 
 # set(IDF_TARGET "esp8266")
 
+execute_process(COMMAND bash ../build_libiot_sdk.sh ${EXTRA_COMPONENT_DIRS} $ENV{IDF_TARGET} ${CMAKE_CURRENT_LIST_DIR})
+
 set(SDKCONFIG_DEFAULTS ${CMAKE_CURRENT_LIST_DIR}/sdkconfig_defaults/sdkconfig.defaults.$ENV{IDF_TARGET})
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)

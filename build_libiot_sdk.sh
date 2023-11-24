@@ -1,14 +1,14 @@
 #!/bin/bash
-echo "******************** Build ali-smartliving-device-sdk-c lib START ********************"
-
 echo IDF_TARGET = $2
+
+echo "**************** Build ali-smartliving-device-sdk-c lib START *****************"
 
 cd ../$1/ali-smartliving-device-sdk-c
 
 if [ -f ".config" ]; then
     result=$(grep "# MODEL  :" .config)
 else
-    result="0"
+    result=""
 fi
 
 result_1=$(echo ${result} | grep "${IDF_TARGET}")
@@ -37,11 +37,17 @@ else
     echo Do nothing!
 fi
 
-echo "******************** Build ali-smartliving-device-sdk-c lib END **********************"
+echo "**************** Build ali-smartliving-device-sdk-c lib END *******************"
+echo
+echo "************************ Check sdkconfig file START ***************************"
 
 result=$(grep "CONFIG_IDF_TARGET=" $3/sdkconfig)
 result_1=$(echo ${result} | grep "${IDF_TARGET}")
 if [[ "$result_1" == "" ]]; then
     rm $3/sdkconfig
     echo RM sdkconfig!
+else
+    echo Do nothing!
 fi
+
+echo "************************* Check sdkconfig file END ****************************"

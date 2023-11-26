@@ -41,11 +41,19 @@ echo "**************** Build ali-smartliving-device-sdk-c lib END **************
 echo
 echo "************************ Check sdkconfig file START ***************************"
 
-result=$(grep "CONFIG_IDF_TARGET=" $3/sdkconfig)
-result_1=$(echo ${result} | grep "${IDF_TARGET}")
-if [[ "$result_1" == "" ]]; then
-    rm $3/sdkconfig
-    echo RM sdkconfig!
+if [ -f "$3/sdkconfig" ]; then
+    result=$(grep "CONFIG_IDF_TARGET=" $3/sdkconfig)
+    result_1=$(echo ${result} | grep "${IDF_TARGET}")
+    if [[ "$result_1" == "" ]]; then
+        rm $3/sdkconfig
+        echo RM sdkconfig!
+        if [ -f "$3/sdkconfig.old" ]; then
+            rm $3/sdkconfig.old
+            echo RM sdkconfig.old!
+        fi
+    else
+        echo Do nothing!
+    fi
 else
     echo Do nothing!
 fi

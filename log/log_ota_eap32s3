@@ -1,0 +1,65 @@
+[inf](45142) awss_notify_dev_info(236): coap send notify success
+[inf](45268) _dm_fota_send_new_config_to_user(50): Send To User: {"version":"1.0.0"}
+[inf](45269) _iotx_linkkit_event_callback(247): Receive Message Type: 44
+[inf](45273) _iotx_linkkit_event_callback(249): Receive Message: {"version":"1.0.0"}
+user_fota_event_handler.323: New Firmware Version: 1.0.0
+I (45293) wrapper_ota: Starting OTA...
+I (45293) wrapper_ota: Writing to partition subtype 17 at offset 0x190000
+I (47463) wrapper_ota: esp_ota_begin succeeded
+I (47463) wrapper_ota: Please Wait. This may take time
+[inf](47467) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](47940) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](47943) awss_notify_dev_info(236): coap send notify success
+[inf](48485) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](48489) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](48496) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+...
+...
+...
+[inf](274971) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](274990) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](274994) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](275001) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](275020) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](275028) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](275032) httpclient_common(875): host: 'ota-cn-shanghai.iot-thing.aliyuncs.com', port: 443
+[inf](275038) httpclient_common(915): close http channel
+[inf](275045) httpclient_close(864): client disconnected
+I (275053) esp_image: segment 0: paddr=00190020 vaddr=3c0d0020 size=34c28h (216104) map
+I (275083) esp_image: segment 1: paddr=001c4c50 vaddr=3fc98400 size=049f4h ( 18932) 
+I (275083) esp_image: segment 2: paddr=001c964c vaddr=40374000 size=069cch ( 27084) 
+I (275093) esp_image: segment 3: paddr=001d0020 vaddr=42000020 size=c65d0h (812496) map
+I (275183) esp_image: segment 4: paddr=002965f8 vaddr=4037a9cc size=0d968h ( 55656) 
+I (275193) esp_image: segment 0: paddr=00190020 vaddr=3c0d0020 size=34c28h (216104) map
+I (275213) esp_image: segment 1: paddr=001c4c50 vaddr=3fc98400 size=049f4h ( 18932) 
+I (275223) esp_image: segment 2: paddr=001c964c vaddr=40374000 size=069cch ( 27084) 
+I (275223) esp_image: segment 3: paddr=001d0020 vaddr=42000020 size=c65d0h (812496) map
+I (275313) esp_image: segment 4: paddr=002965f8 vaddr=4037a9cc size=0d968h ( 55656) 
+I (275363) wrapper_ota: esp_ota_set_boot_partition succeeded
+I (275363) wifi:state: run -> init (0)
+I (275363) wifi:pm stop, total sleep time: 224091552 us / 272758770 us
+
+I (275363) wifi:<ba-del>idx:0, tid:0
+I (275363) wifi:<ba-del>idx:1, tid:6
+I (275373) wifi:new:<12,0>, old:<12,0>, ap:<255,255>, sta:<12,0>, prof:1
+E (275383) conn_mgr: Disconnect reason : 8
+I (275423) wifi:flush txq
+I (275423) wifi:stop sw txq
+I (275423) wifi:lmac stop hw txq
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037599c
+0x4037599c: esp_restart_noos at /home/jc/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3820,len:0x1918
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xe5c
+load:0x403cc700,len:0x3010
+entry 0x403c993c
+I (31) boot: ESP-IDF v5.3-dev-422-ga7fbf452fa 2nd stage bootloader
+I (31) boot: compile time Nov 26 2023 10:53:09
+I (32) boot: Multicore bootloader
+I (36) boot: chip revision: v0.1

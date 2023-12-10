@@ -1,0 +1,9 @@
+menu "[Project] led"
+
+    config LED_GPIO
+        int "LED GPIO"
+        default 8
+        help
+            Select GPIO based on hardware connection.
+
+endmenu

@@ -422,11 +422,23 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
-# [Aliyun]Factory restore
+# [Project] Factory restore
 #
 CONFIG_FACTORY_QUICK_REBOOT_TIMEOUT=6
 CONFIG_FACTORY_QUICK_REBOOT_MAX_TIMES=5
-# end of [Aliyun]Factory restore
+# end of [Project] Factory restore
+
+#
+# [Project] led
+#
+CONFIG_LED_GPIO=8
+# end of [Project] led
+
+#
+# [Project] seitch
+#
+CONFIG_SWITCH_GPIO=5
+# end of [Project] seitch
 
 #
 # Compiler options

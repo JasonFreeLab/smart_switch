@@ -8,7 +8,7 @@
 
 #include "esp_log.h"
 
-#define GPIO_OUTPUT_IO       GPIO_NUM_16
+#define GPIO_OUTPUT_IO       CONFIG_LED_GPIO
 #define GPIO_OUTPUT_PIN_SEL  (1ULL<<GPIO_OUTPUT_IO)
 
 static const char *TAG = "led";

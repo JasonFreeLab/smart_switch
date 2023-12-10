@@ -1,0 +1,641 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xc (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x18a8
+load:0x403cc710,len:0xd68
+load:0x403ce710,len:0x2f24
+entry 0x403cc71a
+I (30) boot: ESP-IDF v5.3-dev-892-g692c1fcc52 2nd stage bootloader
+I (30) boot: compile time Dec 10 2023 19:30:29
+I (31) boot: chip revision: v0.4
+I (35) qio_mode: Enabling default flash chip QIO
+I (40) boot.esp32c3: SPI Speed      : 80MHz
+I (45) boot.esp32c3: SPI Mode       : QIO
+I (50) boot.esp32c3: SPI Flash Size : 4MB
+I (54) boot: Enabling RNG early entropy source...
+I (60) boot: Partition Table:
+I (63) boot: ## Label            Usage          Type ST Offset   Length
+I (71) boot:  0 nvs              WiFi data        01 02 00009000 00004000
+I (78) boot:  1 otadata          OTA data         01 00 0000d000 00002000
+I (85) boot:  2 phy_init         RF data          01 01 0000f000 00001000
+I (93) boot:  3 ota_0            OTA app          00 10 00010000 00180000
+I (100) boot:  4 ota_1            OTA app          00 11 00190000 00180000
+I (108) boot:  5 fctry            WiFi data        01 02 00310000 00004000
+I (116) boot: End of partition table
+I (120) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=324e8h (206056) map
+I (157) esp_image: segment 1: paddr=00042510 vaddr=3fc90000 size=02f40h ( 12096) load
+I (160) esp_image: segment 2: paddr=00045458 vaddr=40380000 size=0abc0h ( 43968) load
+I (171) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=cb72ch (833324) map
+I (288) esp_image: segment 4: paddr=0011b754 vaddr=4038abc0 size=052b4h ( 21172) load
+I (298) boot: Loaded app from partition at offset 0x10000
+I (298) boot: Disabling RNG early entropy source...
+I (309) cpu_start: Unicore app
+I (318) cpu_start: Pro cpu start user code
+I (318) cpu_start: cpu freq: 160000000 Hz
+I (318) cpu_start: Application information:
+I (321) cpu_start: Project name:     smart_switch
+I (326) cpu_start: App version:      97029dd-dirty
+I (332) cpu_start: Compile time:     Dec 10 2023 19:30:20
+I (338) cpu_start: ELF file SHA256:  2777152b2...
+I (343) cpu_start: ESP-IDF:          v5.3-dev-892-g692c1fcc52
+I (349) cpu_start: Min chip rev:     v0.3
+I (354) cpu_start: Max chip rev:     v1.99 
+I (359) cpu_start: Chip rev:         v0.4
+I (364) heap_init: Initializing. RAM available for dynamic allocation:
+I (371) heap_init: At 3FC98700 len 00027900 (158 KiB): RAM
+I (377) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM
+I (384) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM
+I (391) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM
+I (398) spi_flash: detected chip: generic
+I (402) spi_flash: flash io: qio
+I (406) sleep: Configure to isolate all GPIO pins in sleep state
+I (413) sleep: Enable automatic switching of GPIO sleep configuration
+I (420) main_task: Started on CPU0
+I (440) main_task: Calling app_main()
+I (450) wrapper_kv: Set q_rt blob value
+I (460) wrapper_kv: Set awss.rst blob value
+W (460) factory_rst: factory restore
+I (460) wrapper_kv: Set scmode blob value
+I (460) conn_mgr: conn_mgr_set_sc_mode success
+I (460) gpio: GPIO[5]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+I (470) gpio: GPIO[8]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 
+I (480) pp: pp rom version: 9387209
+I (490) net80211: net80211 rom version: 9387209
+I (500) wifi:wifi driver task: 3fca1fac, prio:23, stack:6656, core=0
+I (500) wifi:wifi firmware version: 8e5c2b1
+I (500) wifi:wifi certification version: v7.0
+I (510) wifi:config NVS flash: enabled
+I (510) wifi:config nano formating: disabled
+I (510) wifi:Init data frame dynamic rx buffer num: 32
+I (520) wifi:Init static rx mgmt buffer num: 5
+I (520) wifi:Init management short buffer num: 32
+I (530) wifi:Init dynamic tx buffer num: 32
+I (530) wifi:Init static tx FG buffer num: 2
+I (530) wifi:Init static rx buffer size: 1600
+I (540) wifi:Init static rx buffer num: 10
+I (540) wifi:Init dynamic rx buffer num: 32
+I (550) wifi_init: rx ba win: 6
+I (550) wifi_init: tcpip mbox: 32
+I (550) wifi_init: udp mbox: 6
+I (560) wifi_init: tcp mbox: 6
+I (560) wifi_init: tcp tx win: 5760
+I (570) wifi_init: tcp rx win: 5760
+I (570) wifi_init: tcp mss: 1440
+I (570) wifi_init: WiFi IRAM OP enabled
+I (580) wifi_init: WiFi RX IRAM OP enabled
+I (580) phy_init: phy_version 1130,b4e4b80,Sep  5 2023,11:09:30
+I (620) wifi:mode : sta (84:fc:e6:00:f1:f8)
+I (620) wifi:enable tsf
+[prt] log level set as: [ 4 ]
+W (630) wrapper_kv: nvs get blob stassid failed with 1102
+[crt] enable awss
+
+I (630) app main: IOTX_AWSS_ENABLE
+I (630) app main: LED SHINING START!
+[crt] ssid:adh_a1uSnjJKVjC_00F1F8
+
+I (640) wrapper_awss: ssid: adh_a1uSnjJKVjC_00F1F8
+I (650) wifi:mode : softAP (84:fc:e6:00:f1:f9)
+I (650) wifi:Total power save buffer number: 16
+I (660) wifi:Init max length of beacon: 752/752
+I (660) wifi:Init max length of beacon: 752/752
+I (660) wifi:Total power save buffer number: 16
+I (670) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+I (680) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+I (690) main_task: Returned from app_main()
+I (1670) app main: IOTX_AWSS_START
+I (1670) wrapper_udp: success to establish udp, fd=54
+I (1670) wrapper_os: task name is CoAPServer_yield
+
+I (1670) app main: IOTX_AWSS_ENABLE
+E (6440) wrapper_kv: nvs erase key q_rt failed with 1102
+I (6440) factory_rst: Quick reboot timeout, clear reboot times
+I (20920) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1
+I (20920) wifi:station: 52:2e:ca:0a:86:5a join, AID=1, bgn, 40U
+I (20940) wifi:<ba-add>idx:2 (ifx:1, 52:2e:ca:0a:86:5a), tid:0, ssn:0, winSize:64
+I (21130) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2
+I (21760) wifi:<ba-add>idx:3 (ifx:1, 52:2e:ca:0a:86:5a), tid:6, ssn:0, winSize:64
+[crt] dev ap, len:303, {"id":"35","method":"awss.device.softap.switchap","params":{"bssid":"00:90:4c:88:88:8a","passwd":"644CF53A8221D77E8706B26CDFC290BB","random":"CDF706CE5685509A2A838885734B46BB","regionContent":"0","regionType":"0","ssid":"wifi","token":"4477DFDD0E50584C02BD85348C1B9400","tokenType":"1"},"version":"1.0"}
+
+[crt] ssid, len:4, wifi
+
+[inf](22423) iotx_guider_set_dynamic_region(309): APP region id:0
+I (22820) wrapper_kv: Set regionid blob value
+[inf](22434) guider_set_region_id(261): set regionid:0,ret=0
+[inf](22440) iotx_guider_get_kv_env(176): guider set env:3
+I (22840) wrapper_kv: Set mqtt_url blob value
+[inf](22453) iotx_guider_set_dynamic_mqtt_url(202): set dyna mqtt:a1uSnjJKVjC.iot-as-mqtt.cn-shanghai.aliyuncs.com,ret=0
+[crt] Sending message to app: {"id":35,"code":200,"data":{"awssVer":{"smartconfig":"2.0","zconfig":"2.0","router":"2.0","ap":"2.0","softap":"2.0"},"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg","mac":"84:FC:E6:00:F1:F9","ip":"192.168.4.1","cipherType":3,"fwVersion":"1.0.0","service":0,"serviceVer":{},"token":"4477DFDD0E50584C02BD85348C1B9400","tokenType":1,"remainTime":0,"type":0}}
+
+[crt] switch to ap: 'wifi'
+
+I (22900) app main: IOTX_AWSS_GOT_SSID_PASSWD
+[crt] ready connect ap 'wifi'
+
+[inf](22672) do_connect_ap(848): dev ap: wait switchap resp ack,cnt = 1
+[inf](22872) do_connect_ap(848): dev ap: wait switchap resp ack,cnt = 2
+[inf](23072) do_connect_ap(848): dev ap: wait switchap resp ack,cnt = 3
+I (23670) wifi:station: 52:2e:ca:0a:86:5a leave, AID = 1, bss_flags is 33688675, bss:0x3fc9b018
+I (23670) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1
+I (23670) wifi:<ba-del>idx:2, tid:0
+I (23670) wifi:<ba-del>idx:3, tid:6
+I (23730) wifi:flush txq
+I (23730) wifi:stop sw txq
+I (23730) wifi:lmac stop hw txq
+I (23730) wrapper_awss: ssid: adh_unusable
+I (23990) wifi:mode : softAP (84:fc:e6:00:f1:f9)
+I (24030) wifi:Total power save buffer number: 16
+I (24030) wifi:Init max length of beacon: 752/752
+I (24030) wifi:Init max length of beacon: 752/752
+I (24040) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+I (27040) wifi:flush txq
+I (27040) wifi:stop sw txq
+I (27040) wifi:lmac stop hw txq
+I (27040) app main: IOTX_AWSS_CONNECT_ROUTER
+I (27040) wrapper_awss: ssid: wifi, password: ******, channel: 0
+I (27050) wifi:mode : sta (84:fc:e6:00:f1:f8)
+I (27050) wifi:enable tsf
+I (27050) wrapper_awss: Connecting AP
+I (27550) wrapper_awss: Connecting AP
+I (28020) wifi:new:<9,0>, old:<1,0>, ap:<255,255>, sta:<9,0>, prof:1
+I (28290) wifi:state: init -> auth (b0)
+I (28290) wrapper_awss: Connecting AP
+I (28290) wifi:state: auth -> assoc (0)
+I (28300) wifi:state: assoc -> run (10)
+I (28310) wifi:connected with wifi, aid = 9, channel 9, BW20, bssid = 00:90:4c:88:88:8a
+I (28310) wifi:security: WPA2-PSK, phy: bgn, rssi: -49
+I (28310) wifi:pm start, type: 1
+
+I (28320) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (28320) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (28350) wifi:<ba-add>idx:0 (ifx:0, 00:90:4c:88:88:8a), tid:0, ssn:0, winSize:64
+I (28370) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (28790) wrapper_awss: Connecting AP
+E (29190) wrapper_udp: sendto
+[err](28800) CoAPMessage_send(552): CoAP transport write failed, send message 57406 return 0
+I (29290) wrapper_awss: Connecting AP
+I (29330) esp_netif_handlers: sta ip: 192.168.2.17, mask: 255.255.255.0, gw: 192.168.2.1
+I (29330) wrapper_kv: Set stassid blob value
+I (29330) wrapper_kv: Set pswd blob value
+I (29330) conn_mgr: SNTP get time failed (0), retry after 500 ms
+
+I (29790) wrapper_awss: AP connected
+I (29790) app main: IOTX_AWSS_GOT_IP
+[crt] connect 'wifi' success
+
+I (29840) conn_mgr: SNTP get time failed (1), retry after 500 ms
+
+I (29990) app main: IOTX_AWSS_SUC_NOTIFY
+[inf](29595) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](29597) awss_notify_dev_info(236): coap send notify success
+[inf](29694) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](29696) awss_notify_dev_info(236): coap send notify success
+[inf](29893) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](29895) awss_notify_dev_info(236): coap send notify success
+I (30340) conn_mgr: SNTP get time failed (2), retry after 500 ms
+
+[inf](30193) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](30195) awss_notify_dev_info(236): coap send notify success
+I (30840) conn_mgr: SNTP get time failed (3), retry after 500 ms
+
+[inf](30593) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](30595) awss_notify_dev_info(236): coap send notify success
+I (31340) conn_mgr: SNTP get time failed (4), retry after 500 ms
+
+[inf](31093) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](31095) awss_notify_dev_info(236): coap send notify success
+I (31840) conn_mgr: SNTP get time failed (5), retry after 500 ms
+
+[inf](31693) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](31695) awss_notify_dev_info(236): coap send notify success
+I (32340) conn_mgr: SNTP get time failed (6), retry after 500 ms
+
+[inf](32393) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](32395) awss_notify_dev_info(236): coap send notify success
+I (32840) conn_mgr: SNTP get time failed (7), retry after 500 ms
+
+I (33340) conn_mgr: SNTP get time failed (8), retry after 500 ms
+
+[inf](33194) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](33196) awss_notify_dev_info(236): coap send notify success
+I (33840) conn_mgr: SNTP get time failed (9), retry after 500 ms
+
+I (34340) conn_mgr: SNTP get time success
+
+[inf](33945) iotx_alcs_construct(465): iotx_alcs_construct enter
+[inf](33945) iotx_alcs_adapter_init(271): iotx_alcs_adapter_init
+[inf](33950) CoAPServer_init(190): The CoAP Server already init
+[inf](33957) alcs_context_init(275): CoAPServer_init return :0x3fca879c
+[inf](33965) iotx_alcs_register_resource(817): alcs register resource, uri:/dev/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/core/service/setup
+[inf](33977) alcs_resource_register_secure(750): alcs_resource_register_secure
+[inf](33985) __alcs_localsetup_kv_get(49): ALCS KV Get, Key: ALCS_KEY
+[inf](33992) alcs_add_svr_key(297): alcs_add_svr_key, priority=1
+[inf](33999) add_svr_key(247): add_svr_key, key:i6Ax4AiG
+[inf](34005) add_svr_key(253): add_svr_key 1 
+[inf](34010) alcs_remove_low_priority_key(225): alcs_remove_low_priority_key 2_0: 0x3fc941f8:0x3fc941f8
+[inf](34020) alcs_remove_low_priority_key(238): alcs_remove_low_priority_key 3
+[inf](34028) add_svr_key(255): add_svr_key 2 
+[inf](34033) add_svr_key(265): add_svr_key 3 
+[inf](34039) add_svr_key(271): add_svr_key 4 
+[inf](34044) add_svr_key(279): add_svr_key 5 
+[inf](34049) add_svr_key(285): add_svr_key 6 
+[inf](34054) add_svr_key(291): finish add svr key
+[inf](34059) CoAPServer_init(190): The CoAP Server already init
+[inf](34066) _dm_server_dev_notify(50): notify path:/dev/core/service/dev/notify; payload = {"id":"0","version":"1.0","params":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}},"method":"core.service. ...
+[inf](34096) dm_client_open(37): CM Fd: 0
+[inf](34098) iotx_alcs_register_resource(817): alcs register resource, uri:/sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/service/property/set
+[inf](34111) alcs_resource_register_secure(750): alcs_resource_register_secure
+[inf](34119) dm_server_subscribe(160): Register Resource Result: 0
+[inf](34126) iotx_alcs_register_resource(817): alcs register resource, uri:/sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/service/property/get
+[inf](34139) alcs_resource_register_secure(750): alcs_resource_register_secure
+[inf](34147) dm_server_subscribe(160): Register Resource Result: 0
+[inf](34154) iotx_alcs_register_resource(817): alcs register resource, uri:/sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/property/post
+[inf](34168) alcs_resource_register_secure(750): alcs_resource_register_secure
+[inf](34176) dm_server_subscribe(160): Register Resource Result: 0
+[inf](34182) iotx_alcs_register_resource(817): alcs register resource, uri:/sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/service/#
+[inf](34195) alcs_resource_register_secure(750): alcs_resource_register_secure
+[inf](34203) dm_server_subscribe(160): Register Resource Result: 0
+[inf](34210) iotx_alcs_register_resource(817): alcs register resource, uri:/dev/core/service/dev
+[inf](34219) dm_server_subscribe(160): Register Resource Result: 0
+[inf](34226) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34232) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34239) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34245) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34251) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34257) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34264) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34270) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34276) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34282) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34289) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34295) dm_client_subscribe(153): Subscribe Result: 0
+[inf](34301) iotx_dm_subscribe(231): Devid 0 Sub Completed
+I (34700) app main: IOTX_CONN_CLOUD
+[inf](34312) iotx_guider_get_kv_env(176): guider set env:3
+[inf](34320) iotx_guider_authenticate(1347): dyna url:a1uSnjJKVjC.iot-as-mqtt.cn-shanghai.aliyuncs.com count:1
+.................................
+   PK : a1uSnjJKVjC
+   DN : Wd2Eqi6mTckpvnTiTgBg
+   DS : d771ba7e23
+  PID : JasonFreeLab
+  MID : Module 0
+   SM : TLS + Direct
+   TS : 2524608000000
+.................................
+[inf](34349) awss_check_reset(209): has reset flag in kv
+W (34750) wrapper_kv: nvs get blob awss.rst.type failed with 1102
+[wrn](34362) awss_check_reset(216): no rst type in kv
+[inf](34368) awss_check_reset(220): need report rst,type=1
+.................................
+      Host : a1uSnjJKVjC.iot-as-mqtt.cn-shanghai.aliyuncs.com
+      Port : 443
+  ClientID : a1uSnjJKVjC.Wd2Eqi6mTckpvnTiTgBg|securemode=2,reset=1,tokenType=1,token=4477DFDD0E50584C02BD85348C1B9400,_v=sdk-c-2.3.0_FY_JasonFreeLab1.6.6-9,timestamp=2524608000000,signmethod=hmacsha1,lan=C,pid=JasonFreeLab,mid=Module 0,authtype=custom-ilop,_fy=1.6.6-9,_ss=1|
+        CA : ('... HMUfpIBvFSDJ3gyI ...')
+.................................
+[inf](34415) iotx_mc_init(2376): MQTT init success!
+[inf](34423) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](34430) awss_notify_dev_info(236): coap send notify success
+I (34880) wifi:<ba-add>idx:1 (ifx:0, 00:90:4c:88:88:8a), tid:6, ssn:0, winSize:64
+[inf](34946) recv_msg_handler(135): recv_msg_handler call callback
+[inf](34946) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](34950) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](34957) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](34965) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"119","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](34990) dm_server_send(137): Send Response Result 0
+[inf](35050) recv_msg_handler(135): recv_msg_handler call callback
+[inf](35051) alcs_rec_auth(76): receive data:{"version":"1.0","method":"core/service/auth","id":1398,"params":{"prodKey":"a1uSnjJKVjC", "deviceName":"Wd2Eqi6mTckpvnTiTgBg","encrypt":"payload","randomKey":"SyuO93DxQUbj5q3","sign":"Cc86nCHjRIMSRRY8AyFQlEuYJf4=","accessKey":"i6Ax4AiG10cuF" ...
+[inf](35073) alcs_rec_auth(85): accesskey:i6Ax4AiG10cuF
+[inf](35080) is_legal_key(26): islegal prefix:i6Ax4AiG, seq:cuF
+[inf](35086) alcs_rec_auth(104): accessToken:visTEgdUdtezyV8wC+mcs7MNvjI=
+[inf](35094) alcs_rec_auth(128): calc randomKey:SyuO93DxQUbj5q3,token:visTEgdUdtezyV8wC+mcs7MNvjI=,sign:Cc86nCHjRIMSRRY8AyFQlEuYJf4=
+[inf](35106) alcs_rec_auth(168): new session, id:65934, addr:192.168.2.12, port:5683
+[err](35115) alcs_rec_auth(194): send response:"sign":"UfyhB3WiZQEUMWC+0FqYSfGS7zs=","randomKey":"01vXQo1GL5YC49W","sessionId":65934,"expire":86400,"opt":1,"seqStart":0
+[inf](35131) iotx_mc_connect(2800): mqtt connect success!
+[inf](35137) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /ota/device/request/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg!
+[inf](35149) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /ota/device/upgrade/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg!
+[inf](35161) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/config/get_reply!
+[inf](35174) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/config/push!
+[inf](35187) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/+/post_reply!
+[inf](35199) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/thing/service/property/set!
+[inf](35210) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/thing/service/+!
+[inf](35220) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/thing/deviceinfo/update_reply!
+[inf](35231) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/thing/deviceinfo/delete_reply!
+[inf](35242) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/_thing/event/notify!
+[inf](35252) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/rrpc/request/+!
+[inf](35261) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /ext/ntp/+/+/response!
+[inf](35271) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /ext/error/+/+!
+[inf](35280) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/thing/model/down_raw!
+[inf](35290) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/thing/model/up_raw_reply!
+[inf](35300) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/+/+/_thing/service/post_reply!
+[inf](35311) iotx_report_mid(420): No report MID because which has been reported within client id
+user_mqtt_connect_succ_event_handler.358: ITE_MQTT_CONNECT_SUCC
+[inf](35328) iotx_reconnect_region_subscribe(429): p_topic:/sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/bootstrap/notify
+[inf](35339) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/bootstrap/notify!
+[inf](35352) iotx_reconnect_region_subscribe(443): sub success
+[inf](35358) _dm_client_event_cloud_connected_handle(150): IOTX_CM_EVENT_CLOUD_CONNECTED
+[inf](35367) iotx_alcs_cloud_init(486): Start ALCS Cloud Init
+[inf](35374) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/lan/prefix/get_reply!
+[inf](35387) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/lan/prefix/update!
+[inf](35400) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/lan/blacklist/update!
+[inf](35413) alcs_mqtt_prefixkey_update(734): start alcs_prefixkey_update
+[inf](35421) __alcs_mqtt_kv_get(75): ALCS KV Get, Key: ALCS_KEY
+[inf](35427) alcs_add_svr_key(297): alcs_add_svr_key, priority=2
+[inf](35434) add_svr_key(247): add_svr_key, key:i6Ax4AiG
+[inf](35440) add_svr_key(253): add_svr_key 1 
+[inf](35445) alcs_remove_low_priority_key(225): alcs_remove_low_priority_key 2_0: 0x3fca8524:0x3fca8524
+[inf](35455) alcs_remove_low_priority_key(227): alcs_remove_low_priority_key 2_00
+[inf](35464) alcs_remove_low_priority_key(229): alcs_remove_low_priority_key 2_1
+[inf](35472) alcs_remove_low_priority_key(238): alcs_remove_low_priority_key 3
+[inf](35480) add_svr_key(255): add_svr_key 2 
+[inf](35485) add_svr_key(265): add_svr_key 3 
+[inf](35490) add_svr_key(271): add_svr_key 4 
+[inf](35495) add_svr_key(279): add_svr_key 5 
+[inf](35500) add_svr_key(285): add_svr_key 6 
+[inf](35505) add_svr_key(291): finish add svr key
+W (35900) wrapper_kv: nvs get blob blacklist failed with 1102
+[inf](35517) alcs_prefixkey_get(772): ALCS Prefix Get, Topic: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/lan/prefix/get, Payload: {"id":"0","version":"1.0","params":"{}","method":"thing.lan.prefix.get"}
+[inf](35537) _iotx_linkkit_event_callback(247): Receive Message Type: 10
+[inf](35543) _iotx_linkkit_event_callback(249): Receive Message: {"devid":0}
+user_initialized.86: Device Initialized
+[inf](35558) dm_msg_proc_thing_event_notify(512): _thing/event/notify
+[inf](35564) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](35572) awss_notify_dev_info(236): coap send notify success
+[inf](35584) dm_msg_proc_thing_event_notify(512): _thing/event/notify
+[inf](35604) dm_msg_proc_thing_deviceinfo_update_reply(408): thing/deviceinfo/update_reply
+[inf](35665) __alcs_mqtt_subscribe_callback(311): Receivce Message, Topic: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/lan/prefix/get_reply
+[inf](35668) __alcs_mqtt_subscribe_callback(327): Get Reply, Product Key: a1uSnjJKVjC, Device Name: Wd2Eqi6mTckpvnTiTgBg, PrefixKey: i6Ax4AiG
+[inf](35681) alcs_add_svr_key(297): alcs_add_svr_key, priority=2
+[inf](35688) add_svr_key(247): add_svr_key, key:i6Ax4AiG
+[inf](35694) add_svr_key(253): add_svr_key 1 
+[inf](35699) alcs_remove_low_priority_key(225): alcs_remove_low_priority_key 2_0: 0x3fcb14f4:0x3fcb14f4
+[inf](35709) alcs_remove_low_priority_key(227): alcs_remove_low_priority_key 2_00
+[inf](35717) alcs_remove_low_priority_key(229): alcs_remove_low_priority_key 2_1
+[inf](35725) alcs_remove_low_priority_key(238): alcs_remove_low_priority_key 3
+[inf](35733) add_svr_key(255): add_svr_key 2 
+[inf](35739) add_svr_key(265): add_svr_key 3 
+[inf](35744) add_svr_key(271): add_svr_key 4 
+[inf](35749) add_svr_key(279): add_svr_key 5 
+[inf](35754) add_svr_key(285): add_svr_key 6 
+[inf](35759) add_svr_key(291): finish add svr key
+E (36160) wrapper_kv: nvs erase key 5694ef2f843f5d1 failed with 1102
+I (36160) wrapper_kv: Set ALCS_KEY blob value
+[inf](35777) __alcs_mqtt_kv_set(65): ALCS KV Set, Key: ALCS_KEY, Len: 43
+[inf](35784) _iotx_linkkit_event_callback(247): Receive Message Type: 0
+[inf](35792) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/awss/enrollee/match_reply!
+[inf](35805) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/awss/enrollee/checkin!
+[inf](35818) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/awss/enrollee/found_reply!
+[inf](35832) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/cipher/get_reply!
+[inf](35845) iotx_mc_subscribe(2062): mqtt subscribe packet sent,topic = /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/awss/device/switchap!
+[inf](35860) awss_report_token_to_cloud(366): report token res:28
+[inf](35868) awss_report_statis(176): awss report statis success
+[inf](35873) awss_bind_report_statis(72): bind report statis success
+user_connected_event_handler.52: Cloud Connected
+I (36280) app main: IOTX_CONN_CLOUD_SUC
+I (36280) app main: LED SHINING STOP!
+[inf](35893) _iotx_linkkit_event_callback(247): Receive Message Type: 48
+[inf](35901) _iotx_linkkit_event_callback(249): Receive Message: {"devid":0,"payload":{"identifier":"_LivingLink.thing.reset.reply","value":{"timestamp":"1702208115429"}},"msgid":1381886318}
+[inf](35919) _iotx_linkkit_event_callback(633): got cloud reset done
+E (36330) wrapper_kv: nvs erase key awss.rst.type failed with 1102
+I (36330) app main: IOTX_RESET
+user_awss_status_event_handler.44: Awss Status 12288
+user_event_notify_handler.367: Event notify Received, Devid: 0, Request: {"identifier":"_LivingLink.thing.reset.reply","value":{"timestamp":"1702208115429"}}
+[inf](35957) dm_msg_request(212): DM Send Message, URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/_thing/event/notify_reply, Payload: {"id":"3","version":"1.0","data":{"identifier":"_LivingLink.thing.reset.reply","value":{"timestamp":"1702208115429"}},"method":"_thing.event.notify"}
+[inf](35983) dm_client_publish(198): Publish Result: 0
+user_event_notify_handler.371: Post Property Message ID: 3
+[inf](35995) _iotx_linkkit_event_callback(247): Receive Message Type: 48
+[inf](36002) _iotx_linkkit_event_callback(249): Receive Message: {"devid":0,"payload":{"identifier":"awss.BindNotify","value":{"Operation":"Bind"}},"msgid":1383136449}
+user_event_notify_handler.367: Event notify Received, Devid: 0, Request: {"identifier":"awss.BindNotify","value":{"Operation":"Bind"}}
+[inf](36031) dm_msg_request(212): DM Send Message, URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/_thing/event/notify_reply, Payload: {"id":"4","version":"1.0","data":{"identifier":"awss.BindNotify","value":{"Operation":"Bind"}},"method":"_thing.event.notify"}
+[inf](36055) dm_client_publish(198): Publish Result: 0
+user_event_notify_handler.371: Post Property Message ID: 4
+[inf](36074) awss_report_token_reply(117): awss_report_token_reply
+I (36560) app main: IOTX_AWSS_BIND_NOTIFY
+user_awss_status_event_handler.44: Awss Status 4111
+[inf](36164) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](36171) awss_notify_dev_info(236): coap send notify success
+[inf](36274) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](36275) awss_notify_dev_info(236): coap send notify success
+[inf](36474) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](36475) awss_notify_dev_info(236): coap send notify success
+[inf](36673) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](36675) awss_notify_dev_info(236): coap send notify success
+[inf](36686) recv_msg_handler(135): recv_msg_handler call callback
+[inf](36686) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](36692) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](36699) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](36708) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"120","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](36731) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](36740) dm_server_send(137): Send Response Result 0
+[inf](36773) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](36775) awss_notify_dev_info(236): coap send notify success
+[inf](36993) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](36993) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](36997) dm_msg_proc_thing_service_property_post(259): thing/event/property/post
+[inf](37005) dm_msg_response(268): Send URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/property/post, Payload: {"id":"42","code":200,"data":{}}
+[inf](37021) dm_server_send(137): Send Response Result 0
+[inf](37028) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](37033) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](37040) dm_msg_proc_thing_service_property_post(259): thing/event/property/post
+[inf](37049) dm_msg_response(268): Send URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/property/post, Payload: {"id":"43","code":200,"data":{}}
+[inf](37065) dm_server_send(137): Send Response Result 0
+[inf](37094) recv_msg_handler(135): recv_msg_handler call callback
+[inf](37094) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](37098) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](37105) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](37114) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"121","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](37137) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](37146) dm_server_send(137): Send Response Result 0
+[inf](37173) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](37175) awss_notify_dev_info(236): coap send notify success
+[inf](37673) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](37675) awss_notify_dev_info(236): coap send notify success
+[inf](37873) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](37875) awss_notify_dev_info(236): coap send notify success
+[inf](38273) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](38275) awss_notify_dev_info(236): coap send notify success
+[inf](38973) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](38975) awss_notify_dev_info(236): coap send notify success
+[inf](39142) recv_msg_handler(135): recv_msg_handler call callback
+[inf](39142) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](39146) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](39153) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](39162) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"122","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](39185) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](39194) dm_server_send(137): Send Response Result 0
+[inf](39202) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](39208) awss_notify_dev_info(236): coap send notify success
+[inf](39773) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](39775) awss_notify_dev_info(236): coap send notify success
+[inf](39863) recv_msg_handler(135): recv_msg_handler call callback
+[inf](39864) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](39867) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](39874) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](39883) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"123","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](39906) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](39916) dm_server_send(137): Send Response Result 0
+[inf](40581) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](40582) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](40586) dm_msg_proc_thing_service_property_get(223): thing/service/property/get
+[inf](40596) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](40602) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](40609) dm_msg_proc_thing_service_property_post(259): thing/event/property/post
+[inf](40617) dm_msg_response(268): Send URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/property/post, Payload: {"id":"47","code":200,"data":{}}
+[inf](40633) dm_server_send(137): Send Response Result 0
+[inf](40639) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](40646) awss_notify_dev_info(236): coap send notify success
+[inf](40673) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](40675) awss_notify_dev_info(236): coap send notify success
+[inf](40693) _iotx_linkkit_event_callback(247): Receive Message Type: 16
+[inf](40693) _iotx_linkkit_event_callback(249): Receive Message: {"id":"46","devid":0,"payload":["powerstate"],"ctx":"58ADC93F"}
+user_property_get_event_handler.155: Property Get Received, Devid: 0, Request: ["powerstate"]
+user_property_get_event_handler.181: Property ID, index: 0, Value: powerstate
+user_property_get_event_handler.222: Property Get Response: {"powerstate":1}
+[inf](40728) dm_msg_response(268): Send URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/service/property/get, Payload: {"id":"46","code":200,"data":{"powerstate":1}}
+[inf](40745) dm_server_send(137): Send Response Result 0
+[inf](41673) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](41675) awss_notify_dev_info(236): coap send notify success
+[inf](41911) recv_msg_handler(135): recv_msg_handler call callback
+[inf](41912) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](41915) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](41922) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](41931) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"124","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](41954) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](41963) dm_server_send(137): Send Response Result 0
+[inf](42144) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](42146) awss_notify_dev_info(236): coap send notify success
+[inf](42773) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](42775) awss_notify_dev_info(236): coap send notify success
+[inf](43743) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](43745) awss_notify_dev_info(236): coap send notify success
+[inf](43955) recv_msg_handler(135): recv_msg_handler call callback
+[inf](43955) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](43959) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](43966) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](43974) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"125","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](43998) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](44007) dm_server_send(137): Send Response Result 0
+[inf](44015) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](44020) awss_notify_dev_info(236): coap send notify success
+[inf](45323) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](45325) awss_notify_dev_info(236): coap send notify success
+[inf](45443) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](45447) awss_notify_dev_info(236): coap send notify success
+[inf](45696) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](45697) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](45701) dm_msg_proc_thing_service_property_set(178): thing/service/property/set
+[inf](45709) dm_msg_response(268): Send URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/service/property/set, Payload: {"id":"48","code":200,"data":{}}
+[inf](45725) dm_server_send(137): Send Response Result 0
+[inf](45783) _iotx_linkkit_event_callback(247): Receive Message Type: 15
+[inf](45784) _iotx_linkkit_event_callback(249): Receive Message: {"devid":0,"payload":{"powerstate":1},"msgid":48}
+I (46180) linkkit_switch_solo: Property Set Received, Devid: 0, Request: {"powerstate":1}
+I (46190) switch: switch_set_on : true
+I (46200) led: led_set_on : true
+[inf](45808) dm_msg_request(212): DM Send Message, URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/property/post, Payload: {"id":"5","version":"1.0","params":{"powerstate":1},"method":"thing.event.property.post"}
+[inf](45829) dm_client_publish(198): Publish Result: 0
+[inf](45835) dm_server_send(130): Send Observe Notify Result 0
+I (46230) linkkit_switch_solo: Post Property Message ID: 5
+[inf](45902) dm_msg_proc_thing_event_post_reply(338): Event Id: property
+[inf](46003) recv_msg_handler(135): recv_msg_handler call callback
+[inf](46003) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](46007) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](46014) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](46022) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"126","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](46046) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](46055) dm_server_send(137): Send Response Result 0
+[inf](46062) _iotx_linkkit_event_callback(247): Receive Message Type: 32
+[inf](46067) _iotx_linkkit_event_callback(249): Receive Message: {"id":5,"code":200,"devid":0,"payload":{}}
+user_report_reply_event_handler.96: Message Post Reply Received, Message ID: 5, Code: 200, Reply: {}
+[inf](46723) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](46725) awss_notify_dev_info(236): coap send notify success
+[inf](47243) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](47245) awss_notify_dev_info(236): coap send notify success
+[inf](47439) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](47439) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](47443) dm_msg_proc_thing_service_property_set(178): thing/service/property/set
+[inf](47452) dm_msg_response(268): Send URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/service/property/set, Payload: {"id":"49","code":200,"data":{}}
+[inf](47467) dm_server_send(137): Send Response Result 0
+[inf](47552) _iotx_linkkit_event_callback(247): Receive Message Type: 15
+[inf](47553) _iotx_linkkit_event_callback(249): Receive Message: {"devid":0,"payload":{"powerstate":0},"msgid":49}
+I (47950) linkkit_switch_solo: Property Set Received, Devid: 0, Request: {"powerstate":0}
+I (47960) switch: switch_set_on : false
+I (47970) led: led_set_on : false
+[inf](47578) dm_msg_request(212): DM Send Message, URI: /sys/a1uSnjJKVjC/Wd2Eqi6mTckpvnTiTgBg/thing/event/property/post, Payload: {"id":"6","version":"1.0","params":{"powerstate":0},"method":"thing.event.property.post"}
+[inf](47599) dm_client_publish(198): Publish Result: 0
+[inf](47605) dm_server_send(130): Send Observe Notify Result 0
+I (48000) linkkit_switch_solo: Post Property Message ID: 6
+[inf](47744) dm_msg_proc_thing_event_post_reply(338): Event Id: property
+[inf](47832) _iotx_linkkit_event_callback(247): Receive Message Type: 32
+[inf](47833) _iotx_linkkit_event_callback(249): Receive Message: {"id":6,"code":200,"devid":0,"payload":{}}
+user_report_reply_event_handler.96: Message Post Reply Received, Message ID: 6, Code: 200, Reply: {}
+[inf](48051) recv_msg_handler(135): recv_msg_handler call callback
+[inf](48051) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](48055) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](48062) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](48070) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"127","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](48094) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](48103) dm_server_send(137): Send Response Result 0
+[inf](48224) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](48226) awss_notify_dev_info(236): coap send notify success
+[inf](49143) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](49145) awss_notify_dev_info(236): coap send notify success
+[inf](49823) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](49825) awss_notify_dev_info(236): coap send notify success
+[inf](49997) recv_msg_handler(135): recv_msg_handler call callback
+[inf](49997) _dm_server_malloc_context(27): alcs_context->ip: 192.168.2.12
+[inf](50001) _dm_server_malloc_context(28): alcs_context->port: 5683
+[inf](50008) dm_msg_proc_thing_dev_core_service_dev(1077): /dev/core/service/dev
+[inf](50016) dm_msg_response(268): Send URI: /dev/core/service/dev, Payload: {"id":"128","code":200,"data":{"devices":{"addr":"192.168.2.17","port":5683,"pal":"linkkit-ica","profile":[{"productKey":"a1uSnjJKVjC","deviceName":"Wd2Eqi6mTckpvnTiTgBg"}]}}}
+[inf](50039) iotx_alcs_send_Response(773): a1uSnjJKVjCWd2Eqi6mTckpvnTiTgBg, 0x3fcb9554
+[inf](50048) dm_server_send(137): Send Response Result 0
+[inf](51143) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](51145) awss_notify_dev_info(236): coap send notify success
+[inf](51523) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](51525) awss_notify_dev_info(236): coap send notify success
+[inf](53243) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](53245) awss_notify_dev_info(236): coap send notify success
+[inf](53323) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](53325) awss_notify_dev_info(236): coap send notify success
+[inf](55223) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](55225) awss_notify_dev_info(236): coap send notify success
+[inf](55443) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](55445) awss_notify_dev_info(236): coap send notify success
+[inf](57223) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](57225) awss_notify_dev_info(236): coap send notify success
+[inf](57743) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](57745) awss_notify_dev_info(236): coap send notify success
+[inf](59323) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](59325) awss_notify_dev_info(236): coap send notify success
+[inf](60143) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](60145) awss_notify_dev_info(236): coap send notify success
+[inf](61523) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](61525) awss_notify_dev_info(236): coap send notify success
+[inf](62643) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](62645) awss_notify_dev_info(236): coap send notify success
+[inf](63823) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](63825) awss_notify_dev_info(236): coap send notify success
+[inf](65243) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](65245) awss_notify_dev_info(236): coap send notify success
+[inf](66223) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](66225) awss_notify_dev_info(236): coap send notify success
+[inf](67943) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](67945) awss_notify_dev_info(236): coap send notify success
+[inf](68723) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](68725) awss_notify_dev_info(236): coap send notify success
+[inf](70743) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](70745) awss_notify_dev_info(236): coap send notify success
+[inf](71323) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](71325) awss_notify_dev_info(236): coap send notify success
+[inf](73643) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](73645) awss_notify_dev_info(236): coap send notify success
+[inf](74023) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](74025) awss_notify_dev_info(236): coap send notify success
+[inf](76643) awss_notify_dev_info(232): topic:/sys/awss/event/connectap/notify
+[inf](76645) awss_notify_dev_info(236): coap send notify success
+[inf](76824) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](76826) awss_notify_dev_info(236): coap send notify success
+[inf](79723) awss_notify_dev_info(232): topic:/sys/device/info/notify
+[inf](79725) awss_notify_dev_info(236): coap send notify success
+[inf](95304) iotx_mc_keepalive_sub(3053): send MQTT ping...
+[inf](95348) iotx_mc_cycle(1926): receive ping response!

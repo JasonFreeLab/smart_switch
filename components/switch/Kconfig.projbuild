@@ -1,0 +1,9 @@
+menu "[Project] seitch"
+
+    config SWITCH_GPIO
+        int "SWITCH GPIO"
+        default 5
+        help
+            Select GPIO based on hardware connection.
+
+endmenu

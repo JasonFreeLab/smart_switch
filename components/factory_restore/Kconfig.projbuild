@@ -1,4 +1,4 @@
-menu "[Aliyun]Factory restore"
+menu "[Project] Factory restore"
 
     config FACTORY_QUICK_REBOOT_TIMEOUT
         int "Quick reboot timeout, unit second"

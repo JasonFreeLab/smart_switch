@@ -1,0 +1,10 @@
+{
+    "idf.port": "/dev/ttyUSB0",
+    "idf.adapterTargetName": "esp32s3",
+    "idf.flashType": "UART",
+    "idf.customTask": "clear\n powershell.exe usbipd list\n powershell.exe usbipd attach --wsl --busid 2-2\n sudo chmod a+r+w ${config:idf.port}\n echo \n echo Load USB to TTL.\n",
+    "idf.openOcdConfigs": [
+        "interface/ftdi/esp32_devkitj_v1.cfg",
+        "target/esp32s3.cfg"
+    ],
+}
